@@ -4,7 +4,7 @@ code segment
 str1	db "Install success!",0
 str2	db "install error!" ,0
 start: 
-	mov ax,cs				
+	mov ax,cs			;write the bootup program to the soft disk
 	mov es,ax
 	mov bx,offset bootup		
 	mov ax,0301h				
@@ -17,7 +17,7 @@ start:
 	cmp al,1
 	jne error
 
-	mov bx,offset system  		
+	mov bx,offset system  	;write the mysystem to the soft disk
 	mov ax,0302h				
 	mov cx,2
 	mov dx,0
@@ -291,6 +291,7 @@ clss:	mov word ptr [bx],0
 	pop bx
 	ret
 ;________________________________show a string
+;________________________________dh , dl : row,col
 ;________________________________cl:color
 ;________________________________ds:si  the first address of the string which ends with 0(ascii=0)
 showstr:	push ax
