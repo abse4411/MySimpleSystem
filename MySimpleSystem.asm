@@ -41,7 +41,7 @@ suc:	mov ax,cs
 
 	mov ax,4c00h
        	int 21h
-;___________________________________copy mysystem to safety memory area , 
+;___________________________________copy mysystem to safe memory area , 
 ;___________________________________in order to be not overwritten by other boot programs .
 bootup:
 	mov ax,0
